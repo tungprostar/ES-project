@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cover Template · Bootstrap</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="{% static 'cover.css' %}" rel="stylesheet">
+</head>
+<body class="text-center">
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-5">
+        <div class="container">
+            <div class="inner">
+{#                <h3 class="masthead-brand">Cover</h3>#}
+                <nav class="nav nav-masthead justify-content-center">
+                    <a class="nav-link active" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" href="#">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main role="main" class="inner cover">
+        <h1 class="cover-heading">Kết quả</h1>
+        <div class="container mt-3">
+            <div class="row ">
+                <div class="col-7">
+                    <h3>Score: {{ correct }}</h3>
+                </div>
+                <div class="col-5">
+                    <h3>Hình ảnh</h3>
+                    <img src="{{ img_url }}" alt="" id="thisImg">
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mastfoot mt-auto">
+        <div class="inner">
+            <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a
+                    href="https://twitter.com/mdo">@mdo</a>.</p>
+        </div>
+    </footer>
+    <script src="{% static 'jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            bsCustomFileInput.init()
+        })
+    </script>
+</div>
+</body>
+</html>
